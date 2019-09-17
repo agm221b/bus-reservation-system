@@ -32,7 +32,7 @@ public class Validation {
 	}
 	
 	public void validatePaymentMode(String paymentMode) {
-		if(! paymentMode.equals("UPI")||! paymentMode.equals("DC")||! paymentMode.equals("CC")||! paymentMode.equals("NB")) {
+		if(! paymentMode.equals("UPI")&&! paymentMode.equals("DC")&&! paymentMode.equals("CC")&&! paymentMode.equals("NB")) {
 			throw new PassengerException("Mode of payment should be UPI,DC,CC or NB");
 		}
 	}
@@ -142,7 +142,7 @@ public class Validation {
 		int choice;
 		if(isValidNumeric(input)) {
 			choice = Integer.parseInt(input);
-			if(choice < 1 ||choice> 2) {
+			if(!(choice >= 1 && choice<= 2)) {
 				throw new BusException("Wrong choice entered");
 			}
 		}
@@ -155,7 +155,7 @@ public class Validation {
 		int choice;
 		if(isValidNumeric(input)) {
 			choice = Integer.parseInt(input);
-			if(choice < 1 ||choice> 6) {
+			if(!(choice >= 1 && choice<= 7)) {
 				throw new BusException("Wrong choice entered");
 			}
 		}
@@ -168,7 +168,7 @@ public class Validation {
 		int choice;
 		if(isValidNumeric(input)) {
 			choice = Integer.parseInt(input);
-			if(choice < 0 ||choice> 1) {
+			if(!(choice >= 0 && choice<= 1)) {
 				throw new BusException("Wrong choice entered");
 			}
 		}

@@ -71,6 +71,7 @@ public class MyApplication {
 		
 		int runLoop = 1;
 		String input;
+		outer:
 		while (runLoop != 0) {
 			int choice = 0;
 			while (true) {
@@ -81,6 +82,7 @@ public class MyApplication {
 				System.out.println("Press 4 for Viewing All Buses");
 				System.out.println("Press 5 for Viewing BusTransaction Details");
 				System.out.println("Press 6 for Editing Personal Details");
+				System.out.println("Press 7 for Exiting To Main Menu");
 				System.out.println("---------------------------------------------------");
 				System.out.println("Enter your choice:");
 				
@@ -326,12 +328,15 @@ public class MyApplication {
 			case 6:
 				System.out.println("You cannot edit your personal details. System is under maintenance");
 				break;
+			case 7:runLoop=0;
+				System.out.println("Exiting");
+				continue outer;
 			default:
 				System.out.println("Wrong choice : Enter a valid Integer input");
 				break;
 			}
 			System.out.println("----------------------------------------------------");
-			System.out.println("Press 1 to continue, 0 to exit to the main menu");
+			System.out.println("Press 1 to continue with the same menu, 0 to exit to the main menu");
 			runLoop = scanner.nextInt();
 			System.out.println("----------------------------------------------------");
 		}
@@ -343,6 +348,7 @@ public class MyApplication {
 		Scanner scanner = new Scanner(System.in);
 		int runLoop = 1;
 		String input;
+		outer:
 		while (runLoop != 0) {
 			int choice = 0;
 			while (true) {
@@ -351,6 +357,7 @@ public class MyApplication {
 				System.out.println("Press 3 for Viewing Bookings List");
 				System.out.println("Press 4 for Cancelling a Ticket");
 				System.out.println("Press 5 for Editing Personal Details");
+				System.out.println("Press 6 for Exiting To Main Menu");
 				System.out.println("Enter your choice: ");
 				input = scanner.next(); // INputMismatchExcp
 				try {
@@ -525,6 +532,9 @@ public class MyApplication {
 			case 5:
 				System.out.println("You cannot edit your personal details. System is under maintenance");
 				break;
+			case 6:runLoop=0;
+				System.out.println("Exiting");
+				continue outer;
 			default:
 				System.out.println("Wrong choice : Enter a valid Integer input");
 				break;
@@ -534,6 +544,5 @@ public class MyApplication {
 
 		}
 		scanner.close();
-
 	}
 }
