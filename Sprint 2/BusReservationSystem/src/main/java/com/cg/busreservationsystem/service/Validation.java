@@ -142,7 +142,7 @@ public class Validation {
 		int choice;
 		if(isValidNumeric(input)) {
 			choice = Integer.parseInt(input);
-			if(!(choice >= 1 && choice<= 2)) {
+			if(!(choice >= 1 && choice<= 3)) {
 				throw new BusException("Wrong choice entered");
 			}
 		}

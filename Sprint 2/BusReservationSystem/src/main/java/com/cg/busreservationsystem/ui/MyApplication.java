@@ -32,6 +32,7 @@ public class MyApplication {
 	}
 	
 	static void showUserMenu() {
+		System.out.println("\n\n\t\t****** Welcome to Bus Reservation System ******");
 		validation = new Validation();
 		Scanner scanner = new Scanner(System.in);
 		int runLoop = 1;
@@ -39,10 +40,11 @@ public class MyApplication {
 		while (runLoop != 0) {
 			int choice;
 			while (true) {
-				System.out.println("-------------------------------------");
+				System.out.println("---------------------------------------------------------------");
 				System.out.println("Select 1 for Admin");
 				System.out.println("Select 2 for Customer");
-				System.out.println("--------------------------------------");
+				System.out.println("Select 3 to Exit");
+				System.out.println("---------------------------------------------------------------");
 				System.out.println("Enter your choice:");
 				input = scanner.next();
 				try {
@@ -51,6 +53,10 @@ public class MyApplication {
 						adminMenu();
 					} else if (choice == 2) {
 						customerMenu();
+					} else if(choice == 3)
+					{
+						System.out.println("Exiting the application");
+						runLoop=0;
 					}
 					break;
 				} catch (RuntimeException e) { 
@@ -59,7 +65,7 @@ public class MyApplication {
 				}
 			}
 
-			System.out.println("Press 1 to continue, 0 to exit to the application");
+			System.out.println("Press 1 to go back to main menu, 0 to confirm exit");
 			runLoop = scanner.nextInt();
 
 		}
@@ -329,7 +335,7 @@ public class MyApplication {
 				System.out.println("You cannot edit your personal details. System is under maintenance");
 				break;
 			case 7:runLoop=0;
-				System.out.println("Exiting");
+				System.out.println("Exiting to main menu");
 				continue outer;
 			default:
 				System.out.println("Wrong choice : Enter a valid Integer input");
@@ -533,7 +539,7 @@ public class MyApplication {
 				System.out.println("You cannot edit your personal details. System is under maintenance");
 				break;
 			case 6:runLoop=0;
-				System.out.println("Exiting");
+				System.out.println("Exiting to main menu");
 				continue outer;
 			default:
 				System.out.println("Wrong choice : Enter a valid Integer input");
