@@ -172,7 +172,7 @@ public class MyApplication {
 						input = scanner.next();
 
 						try {
-							day = validation.validateChoice(input);
+							day = validation.validateDayChoice(input);
 							break;
 						} catch (RuntimeException e) {
 							
